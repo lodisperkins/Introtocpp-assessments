@@ -23,6 +23,7 @@ int main()
 	//this is the layout for the grid. the plan is to have the user change the output of grid in the cooridinate they want
 	do
 	{
+		system("cls");
 		std::cout << "     0        1         2\n";
 		std::cout << "        " << grid[0][0] << "|       " << grid[0][1] << "|   " << grid[0][2] << std::endl;
 		std::cout << "0" << "   _____|________|_____\n";
@@ -94,6 +95,7 @@ int main()
 		{
 			victoryMetX = true;
 		}
+
 		if (victoryMetX == true)
 		{
 			std::cout << " x wins!" << std::endl;
@@ -120,6 +122,13 @@ int main()
 			}
 		}
 		system("cls");
+		std::cout << "     0        1         2\n";
+		std::cout << "        " << grid[0][0] << "|       " << grid[0][1] << "|   " << grid[0][2] << std::endl;
+		std::cout << "0" << "   _____|________|_____\n";
+		std::cout << "        " << grid[1][0] << "|       " << grid[1][1] << "|   " << grid[1][2] << std::endl;
+		std::cout << "1" << "   _____|________|_____\n";
+		std::cout << "2" << "        |        |        \n";
+		std::cout << "        " << grid[2][0] << "|       " << grid[2][1] << "|   " << grid[2][2] << std::endl;
 		
 		bool victoryMetO = false;
 		if (((grid[0][0] == 'o') && (grid[0][1] == 'o')) && (grid[0][2] == 'o'))
@@ -154,17 +163,22 @@ int main()
 		{
 			victoryMetO = true;
 		}
-		else if (victoryMetO == true)
+
+		if (victoryMetO == true)
 		{
 			std::cout << " o wins!" << std::endl;
 			break;
 		}
-		else if (((victoryMetX == false) && (victoryMetO == false)) && (turns >= 8))
+		else
+		{
+			victoryMetO = false;
+		}
+		if (((victoryMetX == false) && (victoryMetO == false)) && (turns >= 4))
 		{
 			std::cout << "Ya both lost\n";
 			break;
 		}
-		else if (((victoryMetX == false) && (victoryMetO == false)) && (turns < 8))
+		else if (((victoryMetX == false) && (victoryMetO == false)) && (turns < 4))
 		{
 			turns++;			
 		}
