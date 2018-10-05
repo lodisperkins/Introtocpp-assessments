@@ -1,3 +1,82 @@
+# Tic - Tac- Toe Documentation
+
+
+Lodis Perkins
+
+Matthew Williamson
+
+s188043
+
+Intro to C Plus Plus
+
+## Requirements Documentation
+
+### I.1 Description of Problem
+
+ Problem Statement: Create a program that allows two players on the same computer to play a game of Tic Tac Toe
+
+Problem Specification: Two players alternate placing tokens on a 3 by 3 grid. The first player to get three of their respective tokens in a row wins. Player cannot place tokens on occupied sections of the grid. A player cannot place more than one token on their turn. A victory condition is met when a player has placed three of their tokens in a row horizontally, vertically, or diagonally. If all sections of the grid are filled and no player has met a victory condition the game ends in a draw. Program will finish when app is forced to quit, a player has won, or the draw condition is met. Must use variables, conditionals, loops, and arrays.
+
+### I.2 Input Information
+
+ The user must use the key board to input numbers determining where they would like to go.
+
+### I.3 Output Information
+
+ The program will display a three by three grid that updates each time a piece is placed
+
+### User Interface
+
+![User Interface gif](https://media.giphy.com/media/2dc66BQwAwZ6K2L5ye/giphy.gif)
+
+The user is first asked to press any key to begin the game. Afterwards a grid is displayed on screen. The user must then type a number between 0 and 2 twice to set a coordinate that they would like to put their piece in.
+
+## II Design Documentation
+
+### II.1 System Architecture Description
+
+All of the programs functionality is in the source.cpp file.
+
+### File Source.cpp
+
+Name: grid[][](char)
+
+Description:The array that the pieces will be placed in.
+
+Name: x(int)
+
+Description: Stores user input for the x cooridinate
+
+Name:y(int)
+
+Description: Stores user input for the y cooridinate
+
+Name:turnx(bool)
+
+Description: Is used to determine whether or not the player placing the x token is allowed to place tokens
+
+Name: turno(bool)
+
+Description: Is used to determine whether or not the player placing the o token is allowed to place tokens
+
+Name: turns(int)
+
+Description: Counts the amount of possible turns left in the game is used to check when the game is over and ended in a draw.
+
+Name: victoryMetO(bool)
+
+Description: Checks if the user placing the o token has won the game
+
+Name: victoryMetX(bool)
+
+Description: Checks if the user placing the x token has won the game
+
+## Implementation Documentation
+
+### File Source.cpp
+
+```c++
+
 #include <iostream>
 #include <string>
 
@@ -14,9 +93,6 @@ int main()
 	bool turnx;
 	bool turno;
 	//integers to iterate of array
-	int i;
-	int j;
-	int temp;
 	int turns = 0;
 	bool victoryMetO = false;
 	bool victoryMetX = false;
@@ -189,3 +265,4 @@ int main()
 	} while (true);
 	system("pause");
 }
+```

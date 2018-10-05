@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\hypno\source\repos\the number guessing game\rngpractice\source.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  rngpractice.vcxproj -> C:\Users\hypno\source\repos\The Number Guessing game\Debug\rngpractice.exe
